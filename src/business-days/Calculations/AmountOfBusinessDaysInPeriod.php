@@ -2,19 +2,12 @@
 
 namespace BusinessDays\Calculations;
 
-use BusinessDays\Util\DateEnrichmentProvider;
-
-class AmountOfBusinessDaysInPeriod implements Calculation
+class AmountOfBusinessDaysInPeriod extends AbstractBusinessDayCalculator implements Calculation
 {
     /**
      * @var \DatePeriod
      */
     protected $period;
-
-    /**
-     * @var DateEnrichmentProvider
-     */
-    protected $enrichmentProviders;
 
     /**
      * @var int
@@ -29,8 +22,8 @@ class AmountOfBusinessDaysInPeriod implements Calculation
      */
     public function __construct(\DatePeriod $period, array $enrichmentProviders)
     {
+        parent::__construct($enrichmentProviders);
         $this->period = $period;
-        $this->enrichmentProviders = $enrichmentProviders;
         $this->businessDays = 0;
     }
 
@@ -50,19 +43,4 @@ class AmountOfBusinessDaysInPeriod implements Calculation
         return $this->businessDays;
     }
 
-    /**
-     * @param \DateTime $date
-     *
-     * @return bool
-     */
-    private function isBusinessDay(\DateTime $date)
-    {
-        foreach ($this->enrichmentProviders as $enrichmentProvider) {
-            if (!$enrichmentProvider->isBusinessDay($date)) {
-                return false;
-            }
-        }
-
-        return true;
-    }
 }

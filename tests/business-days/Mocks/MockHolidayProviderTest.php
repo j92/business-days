@@ -4,7 +4,6 @@ namespace Tests\BusinessDays\Mocks;
 
 class MockHolidayProviderTest extends \PHPUnit_Framework_TestCase
 {
-
     public function testIsBusinessDay_alwaysReturnsTrue()
     {
         $provider = new MockHolidayProvider();

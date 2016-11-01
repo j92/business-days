@@ -6,7 +6,6 @@ use BusinessDays\Util\WeekendEnrichmentProvider;
 
 class WeekendEnrichmentProviderTest extends \PHPUnit_Framework_TestCase
 {
-
     public function testIsBusinessDays_withWeekendDays_returnsFalse()
     {
         $enricher = new WeekendEnrichmentProvider();

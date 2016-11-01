@@ -42,5 +42,4 @@ class AmountOfBusinessDaysInPeriod extends AbstractBusinessDayCalculator impleme
 
         return $this->businessDays;
     }
-
 }

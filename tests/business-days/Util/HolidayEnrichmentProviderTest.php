@@ -6,7 +6,6 @@ use BusinessDays\Util\HolidayEnrichmentProvider;
 
 class HolidayEnrichmentProviderTest extends \PHPUnit_Framework_TestCase
 {
-
     public function testIsBusinessDay_givenHoliday_returnsFalse()
     {
         $provider = new HolidayEnrichmentProvider();
@@ -20,4 +19,4 @@ class HolidayEnrichmentProviderTest extends \PHPUnit_Framework_TestCase
         $this->assertFalse($provider->isBusinessDay(new \DateTime('25-12-2015')));
         $this->assertFalse($provider->isBusinessDay(new \DateTime('01-01-2016')));
     }
-}   
+}

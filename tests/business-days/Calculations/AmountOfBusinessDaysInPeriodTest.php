@@ -2,14 +2,12 @@
 
 namespace Tests\BusinessDays\Calculations;
 
-
 use BusinessDays\Calculations\AmountOfBusinessDaysInPeriod;
 use BusinessDays\Util\HolidayEnrichmentProvider;
 use BusinessDays\Util\WeekendEnrichmentProvider;
 
 class AmountOfBusinessDaysInPeriodTest extends \PHPUnit_Framework_TestCase
 {
-
     public function testGetResult_canHandleMultipleEnrichmentProviders()
     {
         $this->assertHolidays('01-01-2016', '05-01-2016', 1);
@@ -34,5 +32,4 @@ class AmountOfBusinessDaysInPeriodTest extends \PHPUnit_Framework_TestCase
 
         $this->assertEquals($expected, $calculation->getResult());
     }
-
 }

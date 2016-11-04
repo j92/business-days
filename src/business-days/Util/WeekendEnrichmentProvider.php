@@ -11,12 +11,6 @@ class WeekendEnrichmentProvider implements DateEnrichmentProvider
      */
     public function isBusinessDay(\DateTime $dateTime)
     {
-        $weekend = ['Sat', 'Sun'];
-
-        if (in_array($dateTime->format('D'), $weekend)) {
-            return false;
-        }
-
-        return true;
+        return !in_array($dateTime->format('D'), ['Sat', 'Sun']);
     }
 }

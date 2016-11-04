@@ -4,7 +4,7 @@ namespace Tests\BusinessDays\Calculations;
 
 use BusinessDays\Calculations\AmountOfBusinessDaysInPeriod;
 use BusinessDays\Util\HolidayEnrichmentProvider;
-use BusinessDays\Util\WeekendEnrichmentProvider;
+use BusinessDays\Util\WeekendProvider;
 
 class AmountOfBusinessDaysInPeriodTest extends \PHPUnit_Framework_TestCase
 {
@@ -27,7 +27,7 @@ class AmountOfBusinessDaysInPeriodTest extends \PHPUnit_Framework_TestCase
 
         $calculation = new AmountOfBusinessDaysInPeriod($period, [
             new HolidayEnrichmentProvider(),
-            new WeekendEnrichmentProvider()
+            new WeekendProvider()
         ]);
 
         $this->assertEquals($expected, $calculation->getResult());

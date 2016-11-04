@@ -2,7 +2,7 @@
 
 namespace BusinessDays\Util;
 
-class WeekendEnrichmentProvider implements DateEnrichmentProvider
+class WeekendProvider implements DateEnrichmentProvider
 {
     /**
      * @param \DateTime $dateTime

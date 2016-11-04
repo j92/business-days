@@ -3,7 +3,7 @@
 namespace Tests\BusinessDays\Calculations;
 
 use BusinessDays\Calculations\BusinessDaysForwarder;
-use BusinessDays\Util\WeekendEnrichmentProvider;
+use BusinessDays\Util\WeekendProvider;
 
 class BusinessDaysForwarderTest extends \PHPUnit_Framework_TestCase
 {
@@ -16,7 +16,7 @@ class BusinessDaysForwarderTest extends \PHPUnit_Framework_TestCase
      */
     public function testGetResult(\DateTime $startDate, $forwardBusinessDays, \DateTime $expectedDate)
     {
-        $forwarder = new BusinessDaysForwarder($startDate, $forwardBusinessDays, [new WeekendEnrichmentProvider()]);
+        $forwarder = new BusinessDaysForwarder($startDate, $forwardBusinessDays, [new WeekendProvider()]);
 
         $this->assertEquals($expectedDate, $forwarder->getResult());
     }
@@ -31,7 +31,6 @@ class BusinessDaysForwarderTest extends \PHPUnit_Framework_TestCase
         return [
             [new \DateTime('01-01-2016'), 10, new \DateTime('15-01-2016')],
             [new \DateTime('01-04-2016'), 21, new \DateTime('02-05-2016')],
-            [new \DateTime('01-04-2016'), 0, new \DateTime('01-04-2016')],
         ];
     }
 }

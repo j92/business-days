@@ -5,7 +5,7 @@ namespace BusinessDays\Util;
 use Yasumi\Provider\AbstractProvider;
 use Yasumi\Yasumi;
 
-class HolidayEnrichmentProvider implements DateEnrichmentProvider
+class HolidayProvider implements DateEnrichmentProvider
 {
     /**
      * @var AbstractProvider[]

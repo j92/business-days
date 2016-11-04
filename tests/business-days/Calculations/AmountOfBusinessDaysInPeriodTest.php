@@ -3,7 +3,7 @@
 namespace Tests\BusinessDays\Calculations;
 
 use BusinessDays\Calculations\AmountOfBusinessDaysInPeriod;
-use BusinessDays\Util\HolidayEnrichmentProvider;
+use BusinessDays\Util\HolidayProvider;
 use BusinessDays\Util\WeekendProvider;
 
 class AmountOfBusinessDaysInPeriodTest extends \PHPUnit_Framework_TestCase
@@ -26,7 +26,7 @@ class AmountOfBusinessDaysInPeriodTest extends \PHPUnit_Framework_TestCase
         $period = new \DatePeriod($startDate, new \DateInterval('P1D'), $endDate);
 
         $calculation = new AmountOfBusinessDaysInPeriod($period, [
-            new HolidayEnrichmentProvider(),
+            new HolidayProvider(),
             new WeekendProvider()
         ]);
 

@@ -31,6 +31,7 @@ class BusinessDaysForwarderTest extends \PHPUnit_Framework_TestCase
         return [
             [new \DateTime('01-01-2016'), 10, new \DateTime('15-01-2016')],
             [new \DateTime('01-04-2016'), 21, new \DateTime('02-05-2016')],
+            [new \DateTime('01-04-2016'), 0, new \DateTime('01-04-2016')],
         ];
     }
 }

@@ -46,7 +46,6 @@ class BusinessDaysForwarder extends AbstractBusinessDayCalculator implements Cal
                 $forwardedBusinessDays++;
             }
         }
-
-        return $currentDate;
+        return isset($currentDate) ? $currentDate : $this->startDate;
     }
 }

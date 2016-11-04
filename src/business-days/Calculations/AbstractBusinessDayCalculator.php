@@ -28,11 +28,11 @@ class AbstractBusinessDayCalculator
     protected function isBusinessDay(\DateTime $date)
     {
         foreach ($this->enrichmentProviders as $enrichmentProvider) {
-            if (!$enrichmentProvider->isBusinessDay($date)) {
-                return false;
+            if ($enrichmentProvider->isBusinessDay($date)) {
+                return true;
             }
         }
 
-        return true;
+        return false;
     }
 }
